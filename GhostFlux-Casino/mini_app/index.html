@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Ghost FluX Casino</title>
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+    <style>
+        body {
+            background: linear-gradient(135deg, #0f0f23 0%, #1a1a2e 100%);
+            color: white;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 20px;
+        }
+        .neon-text {
+            color: #00ffff;
+            text-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff;
+        }
+    </style>
+</head>
+<body>
+    <h1 class="neon-text">👻 Ghost FluX Casino</h1>
+    <p>Mini App загружена! Интерфейс в разработке...</p>
+    <p>Ваш ID: <span id="user-id">-</span></p>
+    
+    <script>
+        // Тест подключения к Telegram WebApp
+        const tg = window.Telegram.WebApp;
+        tg.expand();
+        
+        document.getElementById('user-id').textContent = tg.initDataUnsafe.user?.id || 'Неизвестно';
+        
+        console.log('Telegram WebApp initialized:', tg.initDataUnsafe);
+    </script>
+</body>
+</html>
